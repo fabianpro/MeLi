@@ -1,0 +1,8 @@
+<div fxFlex fxLayoutAlign="center center" style="margin-top: 25px;">
+	<span *ngIf="!data">Que desea buscar?</span>
+	<mat-card fxFlex="80" class="container-items" *ngIf="data && data.items.length" style="padding: 3px;margin-bottom: 80px;">	
+		<ng-container *ngFor="let item of data.items">
+			<app-item [model]="item" *ngIf="item"></app-item>	
+		</ng-container>
+	</mat-card>
+</div>

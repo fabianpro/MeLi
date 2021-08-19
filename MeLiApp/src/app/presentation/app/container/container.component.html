@@ -1,0 +1,16 @@
+<div fxLayout="column">
+	<mat-toolbar color="primary" fxLayout fxLayoutAlign="center center">
+		<div fxFlex="20" fxHide.xs></div>
+	    <input-search 
+	    	fxFlex
+			name="search" 	
+			type="text" 
+			placeholder="Nunca dejes de buscar"
+			(executeQuery)="executeQuery($event)">		
+		</input-search>
+		<div fxFlex="20" fxHide.xs></div>	    
+	</mat-toolbar>
+	<div class="container-content">
+		<router-outlet></router-outlet>
+	</div>	
+</div>

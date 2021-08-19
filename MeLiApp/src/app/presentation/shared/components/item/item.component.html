@@ -1,0 +1,19 @@
+<mat-card fxLayout fxLayoutGap="20px" class="item" (click)="redirect(model)">
+	<div fxFlex="20" fxLayoutAlign="center">
+		<img [src]="model.picture">
+	</div>
+	<div fxLayout="column" fxLayoutGap="20px" fxFlex class="text-content-item">
+		<div fxLayout fxLayoutGap="20px">
+			<span class="price" *ngIf="model.price.currency">{{model.price.currency | currency:'$':'symbol':'4.' + model.price.decimals + '-2'}}</span>
+			<span class="price" *ngIf="!model.price.currency">{{'0' | currency:'$':'symbol':'4.' + model.price.decimals + '-2'}}</span>			
+			<div class="quantity">{{model.sold_quantity}}</div>
+		</div>
+		<div fxLayout="column" fxFlex>
+			<span>{{model.title}}</span>
+			<span>Completo unico!</span>
+		</div>			
+	</div>
+	<div fxFlex="20" class="text-content-item">
+		{{model.free_shipping ? 'Envío gratis' : 'Costo de envío'}}
+	</div>	
+</mat-card>

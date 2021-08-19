@@ -1,0 +1,20 @@
+<div fxLayout fxLayoutGap="20px">
+	<img src="./assets/img/png/Logo_ML.png">
+	<div fxLayout fxLayoutAlign="center" class="input-search">	
+		<input 
+			[type]="type" 
+			[id]="id"
+			[name]="name"
+			[formControl]="controlName" 	
+			(input)="doInput()" 
+			(blur)="doBlur()"
+			[placeholder]="placeholder"
+			[ngClass]="className"
+			[readonly]="readonly"
+			[autocomplete]="autocomplete"
+			(keyup.enter)="executeQuery.emit(controlName.value)"/>
+		<button (click)="executeQuery.emit(controlName.value)" [disabled]="!controlName.value">
+			<mat-icon>search</mat-icon>
+		</button>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<mat-card fxLayout fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px" class="item-detail" *ngIf="model">
+	<div fxLayout="column" fxFlex>
+		<div fxShow.xs fxShow.sm fxHide>
+			<span class="title">{{model.title}}</span>
+		</div>	
+		<span class="description" fxShow.xs fxShow.sm fxHide>{{model.condition === 'new' ? 'Nuevo' : 'Usado'}} - {{model.price.amount}}</span>	
+		<img [src]="model.picture">
+		<h2>Descripción del producto</h2>	
+		<p>{{model.description}}</p>
+	</div>
+	<div fxLayout="column" fxFlex="30" fxFlex.xs="100" fxFlex.sm="100" fxLayoutGap="20px">
+		<span class="description" fxHide.xs fxHide.sm fxShow>{{model.condition === 'new' ? 'Nuevo' : 'Usado'}} - {{model.price.amount}}</span>
+		<div fxHide.xs fxHide.sm fxShow>
+			<span class="title">{{model.title}}</span>
+		</div>
+		<span class="price">{{model.price.currency | currency:'$':'symbol':'4.' + model.price.decimals + '-2'}}</span>
+		<br>
+		<button mat-raised-button class="button-buy" (click)="buy.emit(true)">
+			Comprar
+		</button>
+	</div>	
+</mat-card>
+
+<br><br><br><br>

@@ -1,0 +1,6 @@
+<div fxLayout fxLayoutGap="10px" class="breadcrum-container">
+	<div *ngFor="let item of data;let last = last" class="item">
+		<span class="link" (click)="redirect(item)">{{item.value}}</span>&nbsp;&nbsp;
+		<span *ngIf="!last">/</span>
+	</div>
+</div>
